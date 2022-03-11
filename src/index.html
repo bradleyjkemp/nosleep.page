@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>nosleep.page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="stylesheet" href="css/style.scss">
+
+    <link id="favicon" rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😴</text></svg>">
+    <meta name="theme-color" content="#fafafa">
+    <script src="js/app.js" type="module"></script>
+</head>
+
+<body>
+<nav class="navbar is-light">
+    <div class="container">
+        <div id="navMenu" class="navbar-menu">
+            <div class="navbar-start">
+            </div>
+
+            <div class="navbar-end">
+                <a href="https://github.com/bradleyjkemp/nosleep.page" class="navbar-item">Github</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<section class="hero is-light is-fullheight-with-navbar">
+    <div class="hero-body columns is-centered">
+        <div class="column is-4">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        nosleep.page
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        <p>
+                            This tiny site uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API">Screen Wake Lock API</a> to prevent your device from sleeping.
+                        </p>
+                        <p>
+                            Where this API isn't supported, an empty silent video is played to emulate this behaviour (using <a href="https://github.com/richtr/NoSleep.js">NoSleep.js</a>).
+                        </p>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <div class="card-footer-item field mx-auto">
+                        <input id="preventSleepSwitch" type="checkbox" class="switch is-rounded is-success is-large">
+                        <label for="preventSleepSwitch">Prevent device sleeping</label>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
