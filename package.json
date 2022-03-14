@@ -4,7 +4,7 @@
   "repository": "git@github.com:bradleyjkemp/nosleep.page.git",
   "license": "MIT",
   "scripts": {
-    "build": "node bundle.js"
+    "build": "parcel build src/*.html"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^4.1.3",
