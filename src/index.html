@@ -31,30 +31,32 @@
     </div>
 </nav>
 <section id="hero" class="hero is-light is-fullheight-with-navbar">
-    <div class="hero-body columns is-centered">
-        <div class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd">
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        nosleep.page
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <p>
-                            This tiny site uses the <a class="has-text-link" href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API">Screen Wake Lock API</a> to prevent your device from sleeping.
+    <div class="hero-body is-centered">
+        <div class="columns">
+            <div class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            nosleep.page
                         </p>
-                        <p>
-                            Where this API isn't supported, an empty silent video is played to emulate this behaviour (using <a class="has-text-link" href="https://github.com/richtr/NoSleep.js">NoSleep.js</a>).
-                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <p>
+                                This tiny site uses the <a class="has-text-link" href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API">Screen Wake Lock API</a> to prevent your device from sleeping.
+                            </p>
+                            <p>
+                                Where this API isn't supported, an empty silent video is played to emulate this behaviour (using <a class="has-text-link" href="https://github.com/richtr/NoSleep.js">NoSleep.js</a>).
+                            </p>
+                        </div>
                     </div>
+                    <footer class="card-footer">
+                        <div class="card-footer-item field mx-auto">
+                            <input id="preventSleepSwitch" type="checkbox" class="switch is-rounded is-success is-large">
+                            <label for="preventSleepSwitch">Prevent device sleeping</label>
+                        </div>
+                    </footer>
                 </div>
-                <footer class="card-footer">
-                    <div class="card-footer-item field mx-auto">
-                        <input id="preventSleepSwitch" type="checkbox" class="switch is-rounded is-success is-large">
-                        <label for="preventSleepSwitch">Prevent device sleeping</label>
-                    </div>
-                </footer>
             </div>
         </div>
     </div>
