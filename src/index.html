@@ -1,75 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>nosleep.page</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
 
-
-    <link id="favicon" rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😴</text></svg>">
-    <meta name="theme-color" content="#fafafa">
+    <link
+      id="favicon"
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😴</text></svg>"
+    />
+    <meta name="theme-color" content="#fafafa" />
     <style>
-        @import "./css/style.scss";
+      @import "./css/style.scss";
+      .is-dark {
+        background: #202434 !important;
+      }
+
+      .is-half-dark {
+        background: #3f486e !important;
+      }
+
+      .is-half-dark * {
+        color: white;
+      }
     </style>
-    <script type="module">import "./js/app.js"</script>
-</head>
+    <script type="module">
+      import "./js/app.js";
+    </script>
+  </head>
 
-<body>
-<nav class="navbar is-light">
-    <div class="container">
+  <body>
+    <nav class="navbar is-light" id="navbar">
+      <div class="container">
         <div class="navbar-brand">
-            <a href="https://github.com/bradleyjkemp/nosleep.page" class="navbar-item">nosleep.page</a>
+          <a
+            href="https://github.com/bradleyjkemp/nosleep.page"
+            class="navbar-item"
+            >nosleep.page</a
+          >
         </div>
-        <div id="navMenu" class="navbar-menu"></div>
-    </div>
-</nav>
-<section id="hero" class="hero is-light is-fullheight-with-navbar">
-    <div class="hero-body columns is-centered">
-        <div class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd">
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        nosleep.page
-                    </p>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <p>
-                            This tiny site uses the <a class="has-text-link" href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API">Screen Wake Lock API</a> to prevent your device from sleeping.
-                        </p>
-                        <p>
-                            Where this API isn't supported, an empty silent video is played to emulate this behaviour (using <a class="has-text-link" href="https://github.com/richtr/NoSleep.js">NoSleep.js</a>).
-                        </p>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <div class="card-footer-item field mx-auto">
-                        <input id="preventSleepSwitch" type="checkbox" class="switch is-rounded is-success is-large">
-                        <label for="preventSleepSwitch">Prevent device sleeping</label>
-                    </div>
-                </footer>
+        <div id="navMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <input
+                id="darkModeSwitch"
+                type="checkbox"
+                name="darkModeSwitch"
+                class="switch is-info is-rounded"
+              />
+              <label for="darkModeSwitch">Dark mode</label>
             </div>
+          </div>
         </div>
-    </div>
-</section>
-<div id="warning-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
+      </div>
+    </nav>
+    <section id="hero" class="hero is-light is-fullheight-with-navbar">
+      <div class="hero-body columns is-centered">
+        <div
+          class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd"
+        >
+          <div class="card" id="card">
+            <header class="card-header">
+              <p class="card-header-title">nosleep.page</p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <p>
+                  This tiny site uses the
+                  <a
+                    class="has-text-link"
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API"
+                    >Screen Wake Lock API</a
+                  >
+                  to prevent your device from sleeping.
+                </p>
+                <p>
+                  Where this API isn't supported, an empty silent video is
+                  played to emulate this behaviour (using
+                  <a
+                    class="has-text-link"
+                    href="https://github.com/richtr/NoSleep.js"
+                    >NoSleep.js</a
+                  >).
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <div class="card-footer-item field mx-auto">
+                <input
+                  id="preventSleepSwitch"
+                  type="checkbox"
+                  class="switch is-rounded is-success is-large"
+                />
+                <label for="preventSleepSwitch">Prevent device sleeping</label>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="warning-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
         <div class="notification is-warning">
-            This site can only prevent your device sleeping if it's in a foreground tab.
-            <br>
-            It doesn't need to be <em>visible</em>, but you can't minimise or switch to a different tab within this window.
+          This site can only prevent your device sleeping if it's in a
+          foreground tab.
+          <br />
+          It doesn't need to be <em>visible</em>, but you can't minimise or
+          switch to a different tab within this window.
         </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
     </div>
-    <button class="modal-close is-large" aria-label="close"></button>
-</div>
-</body>
-
+  </body>
 </html>
